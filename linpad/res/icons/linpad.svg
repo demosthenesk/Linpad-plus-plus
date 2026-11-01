@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="page" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E9EEF5"/>
+    </linearGradient>
+    <linearGradient id="badge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7BD148"/>
+      <stop offset="1" stop-color="#3E9A1E"/>
+    </linearGradient>
+  </defs>
+  <rect x="40" y="18" width="150" height="196" rx="14" fill="url(#page)" stroke="#5A6B80" stroke-width="8"/>
+  <rect x="40" y="18" width="150" height="34" rx="14" fill="#3C7DD9"/>
+  <rect x="40" y="38" width="150" height="14" fill="#3C7DD9"/>
+  <circle cx="72" cy="35" r="7" fill="#E8F1FF"/>
+  <circle cx="115" cy="35" r="7" fill="#E8F1FF"/>
+  <circle cx="158" cy="35" r="7" fill="#E8F1FF"/>
+  <g stroke="#8A99AD" stroke-width="8" stroke-linecap="round">
+    <line x1="64" y1="84" x2="166" y2="84"/>
+    <line x1="64" y1="110" x2="146" y2="110"/>
+    <line x1="64" y1="136" x2="160" y2="136"/>
+    <line x1="64" y1="162" x2="124" y2="162"/>
+  </g>
+  <rect x="126" y="140" width="112" height="98" rx="22" fill="url(#badge)" stroke="#2E7414" stroke-width="6"/>
+  <g stroke="#FFFFFF" stroke-width="13" stroke-linecap="round">
+    <line x1="158" y1="189" x2="182" y2="189"/>
+    <line x1="170" y1="177" x2="170" y2="201"/>
+    <line x1="194" y1="189" x2="218" y2="189"/>
+    <line x1="206" y1="177" x2="206" y2="201"/>
+  </g>
+</svg>

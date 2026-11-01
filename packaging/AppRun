@@ -1,0 +1,17 @@
+#!/bin/sh
+# Linpad++ AppImage entry point
+HERE="$(dirname "$(readlink -f "$0")")"
+export LINPAD_APPDIR="$HERE"
+# keep the caller's environment available for programs Linpad++ launches (Run menu, terminals)
+export LD_LIBRARY_PATH_ORIG="${LD_LIBRARY_PATH:-}"
+export QT_PLUGIN_PATH_ORIG="${QT_PLUGIN_PATH:-}"
+export LD_LIBRARY_PATH="$HERE/usr/share/linpad/lib/PyQt6/Qt6/lib:$HERE/usr/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+unset QT_PLUGIN_PATH PYTHONHOME PYTHONPATH
+# GNOME/KDE themes: let Qt pick the portal/gtk3 platform theme when present
+exec "$HERE/usr/bin/python3.12" -I -c '
+import sys, os
+sys.path.insert(0, os.path.join(os.environ["LINPAD_APPDIR"], "usr/share/linpad/lib"))
+sys.argv[0] = os.environ.get("APPIMAGE", "linpad++")
+from linpad.app import main
+sys.exit(main())
+' "$@"

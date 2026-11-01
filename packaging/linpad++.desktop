@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+Name=Linpad++
+GenericName=Text Editor
+Comment=Source code editor — a Linux re-creation of Notepad++
+Exec=linpad++ %F
+Icon=linpad++
+Terminal=false
+Categories=Utility;TextEditor;Development;
+MimeType=text/plain;text/x-csrc;text/x-chdr;text/x-c++src;text/x-c++hdr;text/x-python;text/x-shellscript;text/html;text/css;text/xml;application/xml;application/json;text/markdown;text/x-java;text/x-php;application/javascript;text/x-sql;text/x-log;
+Keywords=notepad;editor;text;code;npp;
+StartupWMClass=linpad++
+Actions=new-window;
+
+[Desktop Action new-window]
+Name=New Instance
+Exec=linpad++ -multiInst -nosession
