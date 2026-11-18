@@ -1474,6 +1474,7 @@ class MainWindow(QMainWindow, EditMixin, SearchMixin, ViewMixin, MiscMixin, Auto
         self.S["splitter"] = bytes(self.splitter.saveState().toBase64()).decode()
         self.S["split_orientation"] = self.splitter.orientation().value
         self.S["panels"] = {k: d.isVisible() for k, d in self.docks.items()}
+        self.S["zoom"] = [int(v.editor.SendScintilla(S.SCI_GETZOOM)) for v in self.views]
 
     def restore_geometry(self):
         g = self.S["geometry"]
@@ -1483,6 +1484,21 @@ class MainWindow(QMainWindow, EditMixin, SearchMixin, ViewMixin, MiscMixin, Auto
             self.resize(1100, 760)
         if self.S["splitter"]:
             self.splitter.restoreState(QByteArray.fromBase64(self.S["splitter"].encode()))
+        self.restore_zoom()
+
+    def restore_zoom(self):
+        """Put each view back at the zoom it had when Linpad++ was closed, as
+        Notepad++ does with config.xml's zoom/zoom2."""
+        z = self.S["zoom"]
+        if not isinstance(z, (list, tuple)):
+            return
+        for v, level in zip(self.views, z):
+            try:
+                level = max(-10, min(60, int(level)))
+            except (TypeError, ValueError):
+                continue
+            if v.editor.SendScintilla(S.SCI_GETZOOM) != level:
+                v.editor.SendScintilla(S.SCI_SETZOOM, level)
 
     def restore_panels(self):
         for name, vis in (self.S["panels"] or {}).items():

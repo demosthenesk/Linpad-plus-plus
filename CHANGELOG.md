@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2 — 2026-11-18
+* Fix: the zoom level (View → Zoom, Ctrl+Mouse Wheel) was reset every time Linpad++ was closed.
+  Each view's zoom is now saved on exit and restored on the next start, as in Notepad++.
+
 ## 1.0.1 — 2026-10-31
 * Fix: Settings → Preferences → Dark Mode (Light / Dark / Follow system) had no visible effect on
   the editor. The choice now applies immediately and switches the editor theme too, like Notepad++:

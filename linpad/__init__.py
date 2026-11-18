@@ -7,5 +7,5 @@ own GPL data files, read unmodified.
 """
 
 APP_NAME = "Linpad++"
-VERSION = "1.0.1"
+VERSION = "1.0.2"
 UPSTREAM = "Notepad++ 8.9.6.2"

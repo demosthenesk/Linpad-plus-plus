@@ -163,6 +163,7 @@ DEFAULTS = {
     "sync_v": False,
     "sync_h": False,
     "zoom_sync": False,
+    "zoom": [0, 0],                    # per-view zoom level, restored at startup (Notepad++ config.xml zoom/zoom2)
     "panels": {},
     "geometry": "",
     "window_state": "",

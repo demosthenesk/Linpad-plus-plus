@@ -1,4 +1,4 @@
-# Linpad++ 1.0.1 — Notepad++ for Linux
+# Linpad++ 1.0.2 — Notepad++ for Linux
 
 Linpad++ is a native Linux source-code editor that works like **Notepad++ 8.9.6.2**: the same menus, command IDs and default shortcuts, the same two-view tabbed editor, the same panels and dialogs, and the same language, theme and localization files. It is written in Python with PyQt6 and the Scintilla editing engine (via QScintilla), and ships as a single AppImage for Ubuntu 24.04 and other recent x86_64 distributions.
 
@@ -38,8 +38,8 @@ Linpad++ was rebuilt with REA (Reverse Engineering Anything) from the Windows po
 2. Make it executable and run it:
 
    ```bash
-   chmod +x Linpad++-1.0.1-x86_64.AppImage
-   ./Linpad++-1.0.1-x86_64.AppImage [options] [files]
+   chmod +x Linpad++-1.0.2-x86_64.AppImage
+   ./Linpad++-1.0.2-x86_64.AppImage [options] [files]
    ```
 
 The AppImage bundles Python 3.12 and a trimmed PyQt6/Qt 6.12 with QScintilla, plus the xcb libraries Qt needs that Ubuntu often lacks (such as `libxcb-cursor0`). Nothing needs installing on Ubuntu 24.04. glibc, X11/OpenGL, fonts and the GTK stack come from your system.
